@@ -5,8 +5,13 @@ import App from "./App.jsx";
 // Initialize Firebase
 import "./config/firebase.js";
 
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>
 );

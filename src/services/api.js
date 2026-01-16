@@ -87,8 +87,8 @@ export const authService = {
   },
 
   // Get all users (admin only)
-  getUsers: async () => {
-    return apiCall(API_ENDPOINTS.AUTH.USERS);
+  getUsers: async (page = 1, limit = 10) => {
+    return apiCall(`${API_ENDPOINTS.AUTH.USERS}?page=${page}&limit=${limit}`);
   },
 
   // Get user statistics
